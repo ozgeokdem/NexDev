@@ -1,0 +1,76 @@
+﻿@model HomePage
+
+<div class="col-12">
+    <div class="card">
+
+        <div class="card-header">
+            <h1 style="display:inline-block;">Anasayfa</h1>
+            <a asp-area="ManagementArea"
+               asp-controller="HomePages"
+               asp-action="Edit" class="btn btn-warning" style="float:right;">Düzenle</a>
+        </div>
+
+        <div class="card-body">
+            <div class="mb-6">
+                <h5>Sayfa Başlığı</h5>
+                <p>@Model.PageTitle</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Sayfa Açıklaması</h5>
+                <p>@Model.PageDescription</p>
+            </div>
+
+            <div class="mb-2">
+                <h5>Resim</h5>
+                <img src="@Model.ImageUrl" width="100px" />
+            </div>
+
+            <div class="mb-6">
+                <h5>Partnerler</h5>
+                <p>@Model.PartnersTitle</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Proje Başlığı</h5>
+                <p>@Model.ProjectTitle</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Proje Açıklaması</h5>
+                <p>@Model.ProjectDescription</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Proje Butonu Başlığı</h5>
+                <p>@Model.ProjectButtonTitle</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Proje Butonu URL</h5>
+                <p>@Model.ProjectButtonUrl</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Fikir Başlığı</h5>
+                <p>@Model.IdeaTitle</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Fikir Açıklaması</h5>
+                <p>@Model.IdeaDescription</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Fikir Butonu Başlığı</h5>
+                <p>@Model.IdeaButtonTitle</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Fikir Butonu URL</h5>
+                <p>@Model.IdeaButtonUrl</p>
+            </div>
+
+        </div>
+    </div>
+</div>

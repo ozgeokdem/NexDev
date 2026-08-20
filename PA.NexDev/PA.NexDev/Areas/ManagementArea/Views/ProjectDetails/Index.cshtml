@@ -1,0 +1,63 @@
+@model ProjectDetail
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h1 style="display:inline-block">Proje Detay Sayfası</h1>
+            <a asp-area="ManagementArea" asp-controller="ProjectDetails" asp-action="Edit" class="btn btn-warning" style="float:right;">Düzenle</a>
+        </div>
+
+        <div class="card-body">
+            <div class="mb-2">
+                <h3>Sayfa Başlığı</h3>
+                <p>@Model.PageTitle</p>
+            </div>
+
+            <div class="mb-2">
+                <h3>Sayfa Açıklaması</h3>
+                <p>@Model.PageDescription</p>
+            </div>
+
+            <div class="mb-2">
+                <h3>Resim</h3>
+                <img src="@Model.ImageUrl" width="100px" />
+            </div>
+
+            <div class="mb-2">
+                <h3>Sayfa Başlığı</h3>
+                <p>@Model.Title</p>
+            </div>
+
+            <div class="mb-2">
+                <h3>Sayfa Açıklaması</h3>
+                <p>@Model.Description</p>
+            </div>
+
+            <div class="mb-2">
+                <h3>Form Proje İsmi</h3>
+                <p>@Model.FormProjectName</p>
+            </div>
+
+            <div class="mb-2">
+                <h3>Form Adı</h3>
+                <p>@Model.FormName</p>
+            </div>
+
+            <div class="mb-2">
+                <h3>Form Email</h3>
+                <p>@Model.FormEmail</p>
+            </div>
+
+            <div class="mb-2">
+                <h3>Form Mesajı</h3>
+                <p>@Model.FormMessage</p>
+            </div>
+
+            <div class="mb-2">
+                <h3>Buton Metni</h3>
+                <p>@Model.ButtonTitle</p>
+            </div>
+
+        </div>
+    </div>
+</div>

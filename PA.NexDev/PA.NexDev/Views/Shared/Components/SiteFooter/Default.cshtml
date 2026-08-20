@@ -1,0 +1,29 @@
+﻿@model SiteSetting
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4 class="footer-title">@Model.SocialTitle</h4>
+                <ul class="footer-links" style="display: flex; gap: 15px;">
+                    <li><a href="@Model.LinkedinUrl" style="font-size: 1.5rem;"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="@Model.GitHubUrl" style="font-size: 1.5rem;"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="@Model.InstagramUrl" style="font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">@Model.ContactTitle</h4>
+                <ul class="footer-links">
+                    <li><a href="@Model.TitleUrl">@Model.Title</a></li>
+                    <li><span style="color: var(--text-muted);">@Model.Email</span></li>
+                    <li><span style="color: var(--text-muted);">@Model.Phone</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NexDev. Tüm Hakları Saklıdır.</p>
+        </div>
+    </div>
+</footer>

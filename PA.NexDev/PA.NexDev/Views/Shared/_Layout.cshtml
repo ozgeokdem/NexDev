@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <partial name="_Head" />
+</head>
+<body>
+
+    <partial name="_Header" />
+
+    @RenderBody()
+
+    @await Component.InvokeAsync("SiteFooter");
+
+    <partial name="_Scripts" />
+
+</body>
+</html>

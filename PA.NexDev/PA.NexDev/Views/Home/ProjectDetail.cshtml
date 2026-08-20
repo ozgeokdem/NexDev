@@ -1,0 +1,58 @@
+﻿@model ProjectDetailVM
+
+<!-- Page Header -->
+<section class="section" style="padding-top: 150px; background: var(--bg-surface);">
+    <div class="container text-center">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">@Model.Page.PageTitle</h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 20px;">
+            @Model.Page.PageDescription
+        </p>
+    </div>
+</section>
+
+<!-- Project Content Section -->
+<section class="section">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: flex-start;">
+
+            <!-- Left: Image + Title + Description -->
+            <div>
+                <div class="card" style="padding: 0; overflow: hidden; border-radius: 16px; margin-bottom: 24px;">
+                    <img src="@Model.Detail?.ImageUrl" alt="NexShop E-Ticaret Sistemi" style="width: 100%; height: 280px; object-fit: cover; display: block;">
+                </div>
+                <h2 style="font-size: 1.8rem; margin-bottom: 14px;">@Model.Detail.PageTitle</h2>
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
+                    @Model.Detail.PageDescription
+                </p>
+            </div>
+
+            <!-- Right: Request Form -->
+            <div class="card">
+                <h3 style="margin-bottom: 20px; font-size: 1.5rem; text-align: center;">@Model.Detail.Title</h3>
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; text-align: center;">
+                    @Model.Detail.Description
+                </p>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label class="form-label">@Model.Detail.FormProjectName</label>
+                        <input type="text" name="ProjectName" class="form-control" placeholder="İlgilenilen Proje" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">@Model.Detail.FormName</label>
+                        <input type="text" name="FullName" class="form-control" placeholder="Adınız Soyadınız" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">@Model.Detail.FormEmail</label>
+                        <input type="email" name="Email" class="form-control" placeholder="ornek@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">@Model.Detail.FormMessage</label>
+                        <textarea name="Message" class="form-control" placeholder="Projenizle ilgili eklemek istediklerinizi yazın..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">@Model.Detail.ButtonTitle</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

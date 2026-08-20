@@ -1,0 +1,48 @@
+﻿@model User
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h1 style="display:inline-block">Kullanıcı Düzenle</h1>
+            <a asp-area="ManagementArea" asp-controller="Users" asp-action="Index" class="btn btn-warning" style="float:right;">Geri</a>
+        </div>
+
+        <div class="card-body">
+
+            <form asp-action="Edit" enctype="multipart/form-data" method="post">
+
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(x => x.Id)
+
+                <div asp-validation-summary="ModelOnly" style="color:red;"></div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="FullName"></label>
+                    <input type="text" class="form-control" asp-for="FullName" />
+                    <span asp-validation-for="FullName" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Email"></label>
+                    <input type="email" class="form-control" asp-for="Email" />
+                    <span asp-validation-for="Email" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Password"></label>
+                    <input type="password" class="form-control" asp-for="Password" />
+                    <span asp-validation-for="Password" style="color:red;"></span>
+               </div>
+
+               <div class="mb-6 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" asp-for="IsAdmin">
+                    <label class="form-check-label" asp-for="IsAdmin"></label>
+                    <span asp-validation-for="IsAdmin" style="color:red;"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+
+        </div>
+    </div>
+</div>

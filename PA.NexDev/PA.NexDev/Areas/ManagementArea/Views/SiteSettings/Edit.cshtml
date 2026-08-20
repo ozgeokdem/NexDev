@@ -1,0 +1,79 @@
+﻿@model SiteSetting
+
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h1 style="display:inline-block">Site Ayarları Düzenle</h1>
+            <a asp-area="ManagementArea" asp-controller="SiteSettings" asp-action="Index" class="btn btn-warning" style="float:right;">Geri</a>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(x => x.Id)
+
+                <div asp-validation-summary="ModelOnly" style="color:red;"></div>
+
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="SocialTitle"></label>
+                    <input type="text" class="form-control" asp-for="SocialTitle" />
+                    <span asp-validation-for="SocialTitle" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="LinkedinUrl"></label>
+                    <input type="text" class="form-control" asp-for="LinkedinUrl" />
+                    <span asp-validation-for="LinkedinUrl" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="GitHubUrl"></label>
+                    <input type="text" class="form-control" asp-for="GitHubUrl" />
+                    <span asp-validation-for="GitHubUrl" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="InstagramUrl"></label>
+                    <input type="text" class="form-control" asp-for="InstagramUrl" />
+                    <span asp-validation-for="InstagramUrl" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="ContactTitle"></label>
+                    <input type="text" class="form-control" asp-for="ContactTitle" />
+                    <span asp-validation-for="ContactTitle" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Title"></label>
+                    <input type="text" class="form-control" asp-for="Title" />
+                    <span asp-validation-for="Title" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="TitleUrl"></label>
+                    <input type="text" class="form-control" asp-for="TitleUrl" />
+                    <span asp-validation-for="TitleUrl" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Email"></label>
+                    <input type="text" class="form-control" asp-for="Email" />
+                    <span asp-validation-for="Email" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Phone"></label>
+                    <input type="text" class="form-control" asp-for="Phone" />
+                    <span asp-validation-for="Phone" style="color:red;"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+
+        </div>
+    </div>
+</div>

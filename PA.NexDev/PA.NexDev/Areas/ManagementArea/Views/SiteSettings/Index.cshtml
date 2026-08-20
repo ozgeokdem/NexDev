@@ -1,0 +1,41 @@
+﻿@model SiteSetting
+
+<div class="col-12">
+    <div class="card">
+
+        <div class="card-header">
+            <h1 style="display:inline-block;">Site Ayarları</h1>
+            <a asp-area="ManagementArea"
+               asp-controller="SiteSettings"
+               asp-action="Edit" class="btn btn-warning" style="float:right;">Düzenle</a>
+        </div>
+
+        <div class="card-body">
+            <div class="mb-6">
+                <h5>Sosyal Medya Başlığı</h5>
+                <p>@Model.SocialTitle</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Sosyal Medya Linkleri</h5>
+                <p>@Model.LinkedinUrl</p>
+                <p>@Model.GitHubUrl</p>
+                <p>@Model.InstagramUrl</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>İletişim Başlığı</h5>
+                <p>@Model.ContactTitle</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>İletişim Yazıları</h5>
+                <p>@Model.Title</p>
+                <p>@Model.TitleUrl</p>
+                <p>@Model.Email</p>
+                <p>@Model.Phone</p>
+            </div>
+
+        </div>
+    </div>
+</div>

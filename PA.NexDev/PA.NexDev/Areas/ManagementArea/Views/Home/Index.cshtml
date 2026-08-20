@@ -1,0 +1,116 @@
+﻿@using PA.NexDev.ViewModels
+@model DashboardVM
+
+<div class="row">
+<div class="col-md-6">
+    <canvas id="projectMessageChart"></canvas>
+</div>
+    <div class="col-md-6 d-flex flex-column">
+        <div class="col-sm-11 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-1">Toplam Mesaj</p>
+                        <h3 class="mb-0">@Model.TotalMessageCount</h3>
+                    </div>
+                    <span class="avatar-initial rounded bg-label-primary">
+                        <i class="icon-base bx bx-message-rounded-dots"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="col-sm-11 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-1">Okunmuş Mesaj</p>
+                        <h3 class="mb-0">@Model.ReadMessageCount</h3>
+                    </div>
+                    <span class="avatar-initial rounded bg-label-success">
+                        <i class="icon-base bx bx-envelope-open"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="col-sm-11 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-1">Yorum</p>
+                        <h3 class="mb-0">@Model.TestimonialCount</h3>
+                    </div>
+                    <span class="avatar-initial rounded bg-label-warning">
+                        <i class="icon-base bx bx-comment-detail"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+        <div class="col-sm-11 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-1">Yöneticiler</p>
+                        <h3 class="mb-0">@Model.AdminCount</h3>
+                    </div>
+                    <span class="avatar-initial rounded bg-label-danger">
+                        <i class="icon-base bx bx-shield"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="col-sm-11 mb-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-1">Ortaklar</p>
+                        <h3 class="mb-0">@Model.PartnerCount</h3>
+                    </div>
+                    <span class="avatar-initial rounded bg-label-info">
+                        <i class="icon-base bx bx-group"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var ctx = document.getElementById('projectMessageChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Okunmuş', 'Okunmamış'],
+            datasets: [{
+                data: [
+                    @Model.ReadProjectMessageCount,
+                    @Model.ProjectMessageCount - @Model.ReadProjectMessageCount
+                ],
+                backgroundColor: ['green', 'red']
+            }]
+        }
+    });
+</script>
+
+
+
+<div class="row">
+   
+</div>

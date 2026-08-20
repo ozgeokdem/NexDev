@@ -1,0 +1,28 @@
+﻿@model ServicePage
+
+<!-- Page Header -->
+<section class="section" style="padding-top: 150px; background: var(--bg-surface);">
+    <div class="container text-center">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">@Model.PageTitle</h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+            @Model.PageDescription
+        </p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section">
+    <div class="container">
+        <div class="services-grid">
+            @foreach(var item in Model.Services)
+            {
+                <div class="card">
+                    <i class="fa-solid @item.IconClass service-icon"></i>
+                    <h3>@item.Title</h3>
+                    <p class="mt-4" style="color: var(--text-muted);">@item.Description</p>
+                </div>
+            }
+            
+        </div>
+    </div>
+</section>

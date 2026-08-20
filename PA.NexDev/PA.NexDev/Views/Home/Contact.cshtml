@@ -1,0 +1,77 @@
+﻿@model ContactPage
+
+<!-- Page Header -->
+<section class="section" style="padding-top: 150px; background: var(--bg-surface);">
+    <div class="container text-center">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">@Model.PageTitle</h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+            @Model.PageDescription
+        </p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section">
+    <div class="container grid-2">
+
+        <!-- Contact Info -->
+        <div>
+            <h2 style="font-size: 2rem; margin-bottom: 30px;">İletişim Bilgileri</h2>
+
+            <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                <div style="width: 50px; height: 50px; background: var(--bg-surface); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--secondary);">
+                    <i class="fa-solid @Model.Card1IconClass"></i>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 5px;">@Model.Card1Title</h4>
+                    <p style="color: var(--text-muted);">@Model.Card1Description</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                <div style="width: 50px; height: 50px; background: var(--bg-surface); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--secondary);">
+                    <i class="fa-solid @Model.Card2IconClass"></i>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 5px;">@Model.Card2Title</h4>
+                    <p style="color: var(--text-muted);">@Model.Card2Description</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                <div style="width: 50px; height: 50px; background: var(--bg-surface); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--secondary);">
+                    <i class="fa-solid @Model.Card3IconClass"></i>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 5px;">@Model.Card3Title</h4>
+                    <p style="color: var(--text-muted);">@Model.Card3Description</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Mesaj Gönderin</h3>
+            <form asp-controller="Home" asp-action="Contact" method="POST">
+                <div class="form-group">
+                    <label class="form-label">@Model.FormName</label>
+                    <input type="text" name="Name" class="form-control" placeholder="Adınız Soyadınız" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">@Model.FormEmail</label>
+                    <input type="email" name="Email" class="form-control" placeholder="ornek@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">@Model.FormSubject</label>
+                    <input type="text" name="Subject" class="form-control" placeholder="Mesajınızın Konusu" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">@Model.FormMessage</label>
+                    <textarea name="Message" class="form-control" placeholder="Bize ne söylemek istersiniz?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">@Model.FormButtonTitle</button>
+            </form>
+        </div>
+
+    </div>
+</section>

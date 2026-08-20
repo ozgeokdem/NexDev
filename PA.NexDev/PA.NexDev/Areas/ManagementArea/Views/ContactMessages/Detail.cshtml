@@ -1,0 +1,64 @@
+@model ContactMessage
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h1 style="display:inline-block;">İletişim Mesajı Detayı</h1>
+            <a asp-action="Index" class="btn btn-secondary" style="float:right;">Listeye Dön</a>
+        </div>
+
+        <div class="card-body">
+            <div class="mb-3">
+                <h5>Ad Soyad</h5>
+                <p>@Model.FullName</p>
+            </div>
+
+            <div class="mb-3">
+                <h5>E-posta</h5>
+                <p>@Model.Email</p>
+            </div>
+
+            <div class="mb-3">
+                <h5>Konu</h5>
+                <p>@Model.Subject</p>
+            </div>
+
+            <div class="mb-3">
+                <h5>Gönderim Tarihi</h5>
+                <p>@Model.SendDate?.ToString("dd.MM.yyyy HH:mm")</p>
+            </div>
+
+            <div class="mb-3">
+                <h5>Mesaj</h5>
+                <p style="white-space: pre-line;">@Model.Message</p>
+            </div>
+
+            <button type="button" onclick="Delete('@Model.Id')" class="btn btn-danger">
+                <i class="icon-base bx bx-trash me-1"></i>Sil
+            </button>
+        </div>
+    </div>
+</div>
+
+@section PageScripts {
+    <script>
+        function Delete(id) {
+            $.ajax({
+                url: "/ManagementArea/ContactMessages/Delete/" + id,
+                method: "post",
+                data: {},
+                success: function (e) {
+                    if (e.status == true) {
+                        window.location.href = "/ManagementArea/ContactMessages/Index";
+                    }
+                    else {
+                        alert(e.message);
+                    }
+                },
+                error: function () {
+                    alert("Bir hata oluştu!");
+                }
+            });
+        }
+    </script>
+}

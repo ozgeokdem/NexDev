@@ -1,0 +1,32 @@
+@model ProjectPage
+
+<!-- Page Header -->
+<section class="section" style="padding-top: 150px; background: var(--bg-surface);">
+    <div class="container text-center">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">@Model.PageTitle</h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">@Model.PageDescription</p>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section">
+    <div class="container">
+        <div class="projects-grid">
+            @foreach (var item in Model.Items)
+            {
+                <div class="project-card">
+                    <a asp-action="ProjectDetail">
+                        <img src="@item.ImageUrl" alt="@item.Title" class="project-img">
+                    </a>
+                    <div class="project-content">
+                        <a asp-action="ProjectDetail" style="color: inherit; text-decoration: none;">
+                            <h3 class="project-title">@item.Title</h3>
+                        </a>
+                        <p class="project-desc">@item.Description</p>
+                        <a href="@item.ButtonUrl" class="btn btn-primary">@item.ButtonTitle</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

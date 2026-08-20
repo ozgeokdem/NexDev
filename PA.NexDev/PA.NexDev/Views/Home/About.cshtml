@@ -1,0 +1,75 @@
+﻿@model AboutPage
+
+<!-- Page Header -->
+<section class="section" style="padding-top: 150px; background: var(--bg-surface);">
+    <div class="container text-center">
+        <h1 style="font-size: 3rem; margin-bottom: 20px;">@Model.PageTitle</h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+            @Model.PageDescription
+        </p>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="section">
+    <div class="container grid-2" style="align-items: center;">
+        <div>
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">@Model.AboutTitle</h2>
+            <p style="color: var(--text-muted); margin-bottom: 15px;">
+                @Model.AboutDescription
+            </p>
+
+            <div style="display: flex; gap: 20px;">
+                <div>
+                    <h4 style="font-size: 1.5rem; color: var(--secondary);">@Model.ProjectNumber</h4>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">@Model.ProjectTitle</span>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.5rem; color: var(--secondary);">@Model.CustomerNumber</h4>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">@Model.CustomerTitle</span>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.5rem; color: var(--secondary);">@Model.SupportNumber</h4>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">@Model.SupportTitle</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="padding: 0; overflow: hidden; height: 100%;">
+            <img src="~/assets/img/about-team.png" alt="Ekibimiz" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section">
+    <div class="container">
+        <div class="text-center mb-8">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">@Model.TestimonialTitle</h2>
+            <p style="color: var(--text-muted);">@Model.TestimonialDescription</p>
+        </div>
+
+        <div class="services-grid">
+
+            @foreach(var item in Model.Testimonials)
+            {
+                <!-- Testimonial 1 -->
+                <div class="card" style="position: relative;">
+                    <i class="fa-solid fa-quote-left" style="position: absolute; top: 20px; right: 20px; font-size: 3rem; color: rgba(14, 165, 233, 0.1);"></i>
+                    <div style="display: flex; gap: 5px; color: #f59e0b; margin-bottom: 15px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 20px;">"@item.Comment"</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="@item.ProfilePictureUrl" alt="Ahmet Yılmaz" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-light);">
+                        <div>
+                            <h4 style="font-size: 1rem;">@item.FullName</h4>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">@item.Title</span>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</section>

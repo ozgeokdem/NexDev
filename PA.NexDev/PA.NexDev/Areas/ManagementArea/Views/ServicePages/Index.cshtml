@@ -1,0 +1,26 @@
+﻿@model ServicePage
+
+<div class="col-12">
+    <div class="card">
+
+        <div class="card-header">
+            <h1 style="display:inline-block;">Hizmetler Sayfası</h1>
+            <a asp-area="ManagementArea"
+               asp-controller="ServicePages"
+               asp-action="Edit" class="btn btn-warning" style="float:right;">Düzenle</a>
+        </div>
+
+        <div class="card-body">
+            <div class="mb-6">
+                <h5>Sayfa Başlığı</h5>
+                <p>@Model.PageTitle</p>
+            </div>
+
+            <div class="mb-6">
+                <h5>Sayfa Açıklaması</h5>
+                <p>@Model.PageDescription</p>
+            </div>
+
+        </div>
+    </div>
+</div>

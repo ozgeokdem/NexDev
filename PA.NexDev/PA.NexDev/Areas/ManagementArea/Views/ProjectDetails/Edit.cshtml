@@ -1,0 +1,85 @@
+@model ProjectDetail
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h1 style="display:inline-block">Proje Detay Sayfası Düzenle</h1>
+            <a asp-area="ManagementArea" asp-controller="ProjectDetails" asp-action="Index" class="btn btn-warning" style="float:right;">Geri</a>
+        </div>
+
+        <div class="card-body">
+
+            <form asp-action="Edit" enctype="multipart/form-data" method="post">
+
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(x => x.Id)
+                @Html.HiddenFor(x => x.ImageUrl)
+
+                <div asp-validation-summary="ModelOnly" style="color:red;"></div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="PageTitle"></label>
+                    <input type="text" class="form-control" asp-for="PageTitle" />
+                    <span asp-validation-for="PageTitle" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="PageDescription"></label>
+                    <textarea class="form-control" asp-for="PageDescription"></textarea>
+                    <span asp-validation-for="PageDescription" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="ImageUrl"></label>
+                    <input type="file" class="form-control" name="img" />
+                    <span asp-validation-for="ImageUrl" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Title"></label>
+                    <input type="text" class="form-control" asp-for="Title" />
+                    <span asp-validation-for="Title" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Description"></label>
+                    <textarea class="form-control" asp-for="Description"></textarea>
+                    <span asp-validation-for="Description" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="FormProjectName"></label>
+                    <input type="text" class="form-control" asp-for="FormProjectName" />
+                    <span asp-validation-for="FormProjectName" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="FormName"></label>
+                    <input type="text" class="form-control" asp-for="FormName" />
+                    <span asp-validation-for="FormName" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="FormEmail"></label>
+                    <input type="text" class="form-control" asp-for="FormEmail" />
+                    <span asp-validation-for="FormEmail" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="FormMessage"></label>
+                    <input type="text" class="form-control" asp-for="FormMessage" />
+                    <span asp-validation-for="FormMessage" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="ButtonTitle"></label>
+                    <input type="text" class="form-control" asp-for="ButtonTitle" />
+                    <span asp-validation-for="ButtonTitle" style="color:red;"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+
+        </div>
+    </div>
+</div>

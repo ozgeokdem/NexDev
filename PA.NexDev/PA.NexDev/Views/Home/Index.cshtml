@@ -1,0 +1,81 @@
+﻿@model HomePage
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-layout">
+        <!-- Left: Text Content -->
+        <div class="hero-content">
+            <h1 class="hero-title"><span class="hero-title-accent">@Model.PageTitle</span></h1>
+            <p class="hero-subtitle">@Model.PageDescription</p>
+        </div>
+        <!-- Right: Visual -->
+        <div class="hero-visual">
+            <img src="@Model.ImageUrl" alt="Yazılım Geliştirme" class="hero-img">
+        </div>
+    </div>
+</section>
+
+<!-- Partners Section -->
+<section class="partners-section">
+    <div class="container">
+        <p class="partners-label">@Model.PartnersTitle</p>
+        <div class="partners-grid">
+
+        @foreach (var partner in Model.Partners)
+        {
+                <div class="partner-item">
+                    <i class="fa-brands @partner.IconClass"></i>
+                    <span>@partner.Name</span>
+                </div>
+        }
+        </div>
+    </div>
+</section>
+
+
+<!-- Featured Projects Section -->
+<section class="section" style="background: var(--bg-surface);">
+    <div class="container">
+        <div class="text-center mb-8">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">@Model.ProjectTitle</h2>
+            <p style="color: var(--text-muted);">@Model.ProjectDescription</p>
+        </div>
+
+        <div class="projects-grid">
+
+            @foreach (var item in Model.Items)
+            {
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <a asp-controller="Home" asp-action="ProjectDetail" asp-route-id="@item.Id">
+                        <img src="@item.ImageUrl" alt="@item.Title" class="project-img">
+                    </a>
+                    <div class="project-content">
+                        <a asp-action="ProjectDetail" style="color: inherit; text-decoration: none;">
+                            <h3 class="project-title">@item.Title</h3>
+                        </a>
+                        <p class="project-desc">@item.Description</p>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="@Model.ProjectButtonUrl" class="btn btn-primary">@Model.ProjectButtonTitle</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Call to Action -->
+<section class="section" style="background: var(--bg-surface);">
+    <div class="container text-center">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">@Model.IdeaTitle</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px;">
+            @Model.IdeaDescription
+        </p>
+        <a href="@Model.IdeaButtonUrl" class="btn btn-primary">@Model.IdeaButtonTitle</a>
+    </div>
+</section>

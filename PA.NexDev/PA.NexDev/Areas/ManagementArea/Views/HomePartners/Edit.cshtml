@@ -1,0 +1,36 @@
+﻿@model HomePartner
+
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h1 style="display:inline-block">Anasayfa Ortakları Düzenle</h1>
+            <a asp-area="ManagementArea" asp-controller="HomePartners" asp-action="Index" class="btn btn-warning" style="float:right;">Geri</a>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(x => x.Id)
+
+                <div asp-validation-summary="ModelOnly" style="color:red;"></div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Name"></label>
+                    <input type="text" class="form-control" asp-for="Name" />
+                    <span asp-validation-for="Name" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="IconClass"></label>
+                    <input type="text" class="form-control" asp-for="IconClass" />
+                    <span asp-validation-for="IconClass" style="color:red;"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@model ProjectItem
+
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h1 style="display:inline-block">Proje Düzenle</h1>
+            <a asp-area="ManagementArea" asp-controller="HomePageProject" asp-action="Index" class="btn btn-warning" style="float:right;">Geri</a>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="ModelOnly" style="color:red;"></div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Title"></label>
+                    <input type="text" class="form-control" asp-for="Title" />
+                    <span asp-validation-for="Title" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="Description"></label>
+                    <textarea class="form-control" asp-for="Description"></textarea>
+                    <span asp-validation-for="Description" style="color:red;"></span>
+                </div>
+
+                <div class="mb-6">
+                    <label class="form-label" asp-for="ImageUrl"></label>
+                    <input type="file" class="form-control" name="img" />
+                    <span asp-validation-for="ImageUrl" style="color:red;"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+
+        </div>
+    </div>
+</div>

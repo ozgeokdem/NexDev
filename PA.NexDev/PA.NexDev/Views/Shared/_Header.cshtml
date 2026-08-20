@@ -1,0 +1,22 @@
+﻿@{
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+}
+
+<!-- Header Navigation -->
+<header class="header">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-code"></i> Nex<span>Dev</span>
+        </a>
+        <div class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav class="nav-links">
+            <a asp-controller="Home" asp-action="Index" class="@(action == "Index" ? "active" : "")">Anasayfa</a>
+            <a asp-controller="Home" asp-action="About" class="@(action == "About" ? "active" : "")">Hakkımızda</a>
+            <a asp-controller="Home" asp-action="Services" class="@(action == "Services" ? "active" : "")">Hizmetler</a>
+            <a asp-controller="Home" asp-action="Project" class="@(action == "Project" ? "active" : "")">Projeler</a>
+            <a asp-controller="Home" asp-action="Contact" class="@(action == "Contact" ? "active" : "")">İletişim</a>
+        </nav>
+    </div>
+</header>
